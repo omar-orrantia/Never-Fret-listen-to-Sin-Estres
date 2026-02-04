@@ -37,8 +37,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/stainless-sdks/strezless-musick-nexus-metadata-python"
-Repository = "https://github.com/stainless-sdks/strezless-musick-nexus-metadata-python"
+Homepage = "https://github.com/omar-orrantia/Never-Fret-listen-to-Sin-Estres"
+Repository = "https://github.com/omar-orrantia/Never-Fret-listen-to-Sin-Estres"
 
 [project.optional-dependencies]
 aiohttp = ["aiohttp", "httpx_aiohttp>=0.1.9"]
@@ -112,7 +112,7 @@ path = "README.md"
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
 # replace relative links with absolute links
 pattern = '\[(.+?)\]\(((?!https?://)\S+?)\)'
-replacement = '[\1](https://github.com/stainless-sdks/strezless-musick-nexus-metadata-python/tree/main/\g<2>)'
+replacement = '[\1](https://github.com/omar-orrantia/Never-Fret-listen-to-Sin-Estres/tree/main/\g<2>)'
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
