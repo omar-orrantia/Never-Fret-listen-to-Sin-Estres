@@ -17,13 +17,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestStore:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list_inventory(self, client: StrezlessMusickNexusMetadata) -> None:
         store = client.store.list_inventory()
         assert_matches_type(StoreListInventoryResponse, store, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list_inventory(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.store.with_raw_response.list_inventory()
@@ -33,7 +33,7 @@ class TestStore:
         store = response.parse()
         assert_matches_type(StoreListInventoryResponse, store, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list_inventory(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.store.with_streaming_response.list_inventory() as response:
@@ -51,13 +51,13 @@ class TestAsyncStore:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list_inventory(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         store = await async_client.store.list_inventory()
         assert_matches_type(StoreListInventoryResponse, store, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list_inventory(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.store.with_raw_response.list_inventory()
@@ -67,7 +67,7 @@ class TestAsyncStore:
         store = await response.parse()
         assert_matches_type(StoreListInventoryResponse, store, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list_inventory(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.store.with_streaming_response.list_inventory() as response:
