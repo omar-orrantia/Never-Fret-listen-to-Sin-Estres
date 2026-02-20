@@ -18,13 +18,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestOrder:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: StrezlessMusickNexusMetadata) -> None:
         order = client.store.order.create()
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: StrezlessMusickNexusMetadata) -> None:
         order = client.store.order.create(
@@ -37,7 +37,7 @@ class TestOrder:
         )
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.store.order.with_raw_response.create()
@@ -47,7 +47,7 @@ class TestOrder:
         order = response.parse()
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.store.order.with_streaming_response.create() as response:
@@ -59,7 +59,7 @@ class TestOrder:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: StrezlessMusickNexusMetadata) -> None:
         order = client.store.order.retrieve(
@@ -67,7 +67,7 @@ class TestOrder:
         )
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.store.order.with_raw_response.retrieve(
@@ -79,7 +79,7 @@ class TestOrder:
         order = response.parse()
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.store.order.with_streaming_response.retrieve(
@@ -93,7 +93,7 @@ class TestOrder:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: StrezlessMusickNexusMetadata) -> None:
         order = client.store.order.delete(
@@ -101,7 +101,7 @@ class TestOrder:
         )
         assert order is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.store.order.with_raw_response.delete(
@@ -113,7 +113,7 @@ class TestOrder:
         order = response.parse()
         assert order is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.store.order.with_streaming_response.delete(
@@ -133,13 +133,13 @@ class TestAsyncOrder:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         order = await async_client.store.order.create()
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         order = await async_client.store.order.create(
@@ -152,7 +152,7 @@ class TestAsyncOrder:
         )
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.store.order.with_raw_response.create()
@@ -162,7 +162,7 @@ class TestAsyncOrder:
         order = await response.parse()
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.store.order.with_streaming_response.create() as response:
@@ -174,7 +174,7 @@ class TestAsyncOrder:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         order = await async_client.store.order.retrieve(
@@ -182,7 +182,7 @@ class TestAsyncOrder:
         )
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.store.order.with_raw_response.retrieve(
@@ -194,7 +194,7 @@ class TestAsyncOrder:
         order = await response.parse()
         assert_matches_type(Order, order, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.store.order.with_streaming_response.retrieve(
@@ -208,7 +208,7 @@ class TestAsyncOrder:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         order = await async_client.store.order.delete(
@@ -216,7 +216,7 @@ class TestAsyncOrder:
         )
         assert order is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.store.order.with_raw_response.delete(
@@ -228,7 +228,7 @@ class TestAsyncOrder:
         order = await response.parse()
         assert order is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.store.order.with_streaming_response.delete(

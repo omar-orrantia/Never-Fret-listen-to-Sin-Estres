@@ -19,13 +19,13 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestUser:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.create()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.create(
@@ -40,7 +40,7 @@ class TestUser:
         )
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.user.with_raw_response.create()
@@ -50,7 +50,7 @@ class TestUser:
         user = response.parse()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.user.with_streaming_response.create() as response:
@@ -62,7 +62,7 @@ class TestUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.retrieve(
@@ -70,7 +70,7 @@ class TestUser:
         )
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.user.with_raw_response.retrieve(
@@ -82,7 +82,7 @@ class TestUser:
         user = response.parse()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.user.with_streaming_response.retrieve(
@@ -96,7 +96,7 @@ class TestUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_retrieve(self, client: StrezlessMusickNexusMetadata) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `username` but received ''"):
@@ -104,7 +104,7 @@ class TestUser:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.update(
@@ -112,7 +112,7 @@ class TestUser:
         )
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.update(
@@ -128,7 +128,7 @@ class TestUser:
         )
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.user.with_raw_response.update(
@@ -140,7 +140,7 @@ class TestUser:
         user = response.parse()
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.user.with_streaming_response.update(
@@ -154,7 +154,7 @@ class TestUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_update(self, client: StrezlessMusickNexusMetadata) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `existing_username` but received ''"):
@@ -162,7 +162,7 @@ class TestUser:
                 existing_username="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.delete(
@@ -170,7 +170,7 @@ class TestUser:
         )
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.user.with_raw_response.delete(
@@ -182,7 +182,7 @@ class TestUser:
         user = response.parse()
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.user.with_streaming_response.delete(
@@ -196,7 +196,7 @@ class TestUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_path_params_delete(self, client: StrezlessMusickNexusMetadata) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `username` but received ''"):
@@ -204,13 +204,13 @@ class TestUser:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_list(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.create_with_list()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create_with_list_with_all_params(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.create_with_list(
@@ -229,7 +229,7 @@ class TestUser:
         )
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create_with_list(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.user.with_raw_response.create_with_list()
@@ -239,7 +239,7 @@ class TestUser:
         user = response.parse()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create_with_list(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.user.with_streaming_response.create_with_list() as response:
@@ -251,13 +251,13 @@ class TestUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_login(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.login()
         assert_matches_type(str, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_login_with_all_params(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.login(
@@ -266,7 +266,7 @@ class TestUser:
         )
         assert_matches_type(str, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_login(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.user.with_raw_response.login()
@@ -276,7 +276,7 @@ class TestUser:
         user = response.parse()
         assert_matches_type(str, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_login(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.user.with_streaming_response.login() as response:
@@ -288,13 +288,13 @@ class TestUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_logout(self, client: StrezlessMusickNexusMetadata) -> None:
         user = client.user.logout()
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_logout(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.user.with_raw_response.logout()
@@ -304,7 +304,7 @@ class TestUser:
         user = response.parse()
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_logout(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.user.with_streaming_response.logout() as response:
@@ -322,13 +322,13 @@ class TestAsyncUser:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.create()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.create(
@@ -343,7 +343,7 @@ class TestAsyncUser:
         )
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.user.with_raw_response.create()
@@ -353,7 +353,7 @@ class TestAsyncUser:
         user = await response.parse()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.user.with_streaming_response.create() as response:
@@ -365,7 +365,7 @@ class TestAsyncUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.retrieve(
@@ -373,7 +373,7 @@ class TestAsyncUser:
         )
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.user.with_raw_response.retrieve(
@@ -385,7 +385,7 @@ class TestAsyncUser:
         user = await response.parse()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.user.with_streaming_response.retrieve(
@@ -399,7 +399,7 @@ class TestAsyncUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_retrieve(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `username` but received ''"):
@@ -407,7 +407,7 @@ class TestAsyncUser:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.update(
@@ -415,7 +415,7 @@ class TestAsyncUser:
         )
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.update(
@@ -431,7 +431,7 @@ class TestAsyncUser:
         )
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.user.with_raw_response.update(
@@ -443,7 +443,7 @@ class TestAsyncUser:
         user = await response.parse()
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.user.with_streaming_response.update(
@@ -457,7 +457,7 @@ class TestAsyncUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_update(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `existing_username` but received ''"):
@@ -465,7 +465,7 @@ class TestAsyncUser:
                 existing_username="",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.delete(
@@ -473,7 +473,7 @@ class TestAsyncUser:
         )
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.user.with_raw_response.delete(
@@ -485,7 +485,7 @@ class TestAsyncUser:
         user = await response.parse()
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.user.with_streaming_response.delete(
@@ -499,7 +499,7 @@ class TestAsyncUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_path_params_delete(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `username` but received ''"):
@@ -507,13 +507,13 @@ class TestAsyncUser:
                 "",
             )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_list(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.create_with_list()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create_with_list_with_all_params(
         self, async_client: AsyncStrezlessMusickNexusMetadata
@@ -534,7 +534,7 @@ class TestAsyncUser:
         )
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create_with_list(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.user.with_raw_response.create_with_list()
@@ -544,7 +544,7 @@ class TestAsyncUser:
         user = await response.parse()
         assert_matches_type(User, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create_with_list(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.user.with_streaming_response.create_with_list() as response:
@@ -556,13 +556,13 @@ class TestAsyncUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_login(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.login()
         assert_matches_type(str, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_login_with_all_params(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.login(
@@ -571,7 +571,7 @@ class TestAsyncUser:
         )
         assert_matches_type(str, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_login(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.user.with_raw_response.login()
@@ -581,7 +581,7 @@ class TestAsyncUser:
         user = await response.parse()
         assert_matches_type(str, user, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_login(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.user.with_streaming_response.login() as response:
@@ -593,13 +593,13 @@ class TestAsyncUser:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_logout(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         user = await async_client.user.logout()
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_logout(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.user.with_raw_response.logout()
@@ -609,7 +609,7 @@ class TestAsyncUser:
         user = await response.parse()
         assert user is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_logout(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.user.with_streaming_response.logout() as response:
