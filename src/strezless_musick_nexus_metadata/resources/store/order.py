@@ -26,6 +26,8 @@ __all__ = ["OrderResource", "AsyncOrderResource"]
 
 
 class OrderResource(SyncAPIResource):
+    """Access to Petstore orders"""
+
     @cached_property
     def with_raw_response(self) -> OrderResourceWithRawResponse:
         """
@@ -163,6 +165,8 @@ class OrderResource(SyncAPIResource):
 
 
 class AsyncOrderResource(AsyncAPIResource):
+    """Access to Petstore orders"""
+
     @cached_property
     def with_raw_response(self) -> AsyncOrderResourceWithRawResponse:
         """
