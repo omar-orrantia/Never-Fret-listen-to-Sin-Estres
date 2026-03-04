@@ -50,6 +50,8 @@ __all__ = ["PetResource", "AsyncPetResource"]
 
 
 class PetResource(SyncAPIResource):
+    """Everything about your Pets"""
+
     @cached_property
     def with_raw_response(self) -> PetResourceWithRawResponse:
         """
@@ -399,6 +401,8 @@ class PetResource(SyncAPIResource):
 
 
 class AsyncPetResource(AsyncAPIResource):
+    """Everything about your Pets"""
+
     @cached_property
     def with_raw_response(self) -> AsyncPetResourceWithRawResponse:
         """
