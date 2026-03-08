@@ -327,7 +327,7 @@ class TestPet:
     def test_method_upload_image(self, client: StrezlessMusickNexusMetadata) -> None:
         pet = client.pet.upload_image(
             pet_id=0,
-            body=b"raw file contents",
+            body=b"Example data",
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
@@ -336,7 +336,7 @@ class TestPet:
     def test_method_upload_image_with_all_params(self, client: StrezlessMusickNexusMetadata) -> None:
         pet = client.pet.upload_image(
             pet_id=0,
-            body=b"raw file contents",
+            body=b"Example data",
             additional_metadata="additionalMetadata",
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
@@ -346,7 +346,7 @@ class TestPet:
     def test_raw_response_upload_image(self, client: StrezlessMusickNexusMetadata) -> None:
         response = client.pet.with_raw_response.upload_image(
             pet_id=0,
-            body=b"raw file contents",
+            body=b"Example data",
         )
 
         assert response.is_closed is True
@@ -359,7 +359,7 @@ class TestPet:
     def test_streaming_response_upload_image(self, client: StrezlessMusickNexusMetadata) -> None:
         with client.pet.with_streaming_response.upload_image(
             pet_id=0,
-            body=b"raw file contents",
+            body=b"Example data",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -682,7 +682,7 @@ class TestAsyncPet:
     async def test_method_upload_image(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         pet = await async_client.pet.upload_image(
             pet_id=0,
-            body=b"raw file contents",
+            body=b"Example data",
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
@@ -691,7 +691,7 @@ class TestAsyncPet:
     async def test_method_upload_image_with_all_params(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         pet = await async_client.pet.upload_image(
             pet_id=0,
-            body=b"raw file contents",
+            body=b"Example data",
             additional_metadata="additionalMetadata",
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
@@ -701,7 +701,7 @@ class TestAsyncPet:
     async def test_raw_response_upload_image(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         response = await async_client.pet.with_raw_response.upload_image(
             pet_id=0,
-            body=b"raw file contents",
+            body=b"Example data",
         )
 
         assert response.is_closed is True
@@ -714,7 +714,7 @@ class TestAsyncPet:
     async def test_streaming_response_upload_image(self, async_client: AsyncStrezlessMusickNexusMetadata) -> None:
         async with async_client.pet.with_streaming_response.upload_image(
             pet_id=0,
-            body=b"raw file contents",
+            body=b"Example data",
         ) as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
