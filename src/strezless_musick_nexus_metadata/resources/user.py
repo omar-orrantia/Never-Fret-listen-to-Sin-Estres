@@ -8,7 +8,7 @@ import httpx
 
 from ..types import user_login_params, user_create_params, user_update_params
 from .._types import Body, Omit, Query, Headers, NoneType, NotGiven, omit, not_given
-from .._utils import maybe_transform, async_maybe_transform
+from .._utils import path_template, maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -125,7 +125,7 @@ class UserResource(SyncAPIResource):
         if not username:
             raise ValueError(f"Expected a non-empty value for `username` but received {username!r}")
         return self._get(
-            f"/user/{username}",
+            path_template("/user/{username}", username=username),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -169,7 +169,7 @@ class UserResource(SyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `existing_username` but received {existing_username!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return self._put(
-            f"/user/{existing_username}",
+            path_template("/user/{existing_username}", existing_username=existing_username),
             body=maybe_transform(
                 {
                     "id": id,
@@ -216,7 +216,7 @@ class UserResource(SyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `username` but received {username!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return self._delete(
-            f"/user/{username}",
+            path_template("/user/{username}", username=username),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -423,7 +423,7 @@ class AsyncUserResource(AsyncAPIResource):
         if not username:
             raise ValueError(f"Expected a non-empty value for `username` but received {username!r}")
         return await self._get(
-            f"/user/{username}",
+            path_template("/user/{username}", username=username),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
@@ -467,7 +467,7 @@ class AsyncUserResource(AsyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `existing_username` but received {existing_username!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return await self._put(
-            f"/user/{existing_username}",
+            path_template("/user/{existing_username}", existing_username=existing_username),
             body=await async_maybe_transform(
                 {
                     "id": id,
@@ -514,7 +514,7 @@ class AsyncUserResource(AsyncAPIResource):
             raise ValueError(f"Expected a non-empty value for `username` but received {username!r}")
         extra_headers = {"Accept": "*/*", **(extra_headers or {})}
         return await self._delete(
-            f"/user/{username}",
+            path_template("/user/{username}", username=username),
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
